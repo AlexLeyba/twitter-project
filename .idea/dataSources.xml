@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="twitter_db@localhost" uuid="e182a05b-8edf-42cc-9627-a0a38192e873">
+    <data-source source="LOCAL" name="twitter_db@localhost" uuid="52ae2323-21dd-4d9f-9210-0be492a48bdc">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>

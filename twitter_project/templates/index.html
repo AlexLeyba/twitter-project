@@ -57,6 +57,10 @@
     <!-- Begin page content -->
     <main role="main" class="container">
       <h1 class="mt-5">Twitter-project</h1>
+        {% include 'include/inc_form.html' %}
+        {% for i in mess %}
+            {{ i.text }} {{ i.created_date }}<br>
+        {% endfor %}
       <p class="lead"></p>
     </main>
 
