@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from twitter_project.models import Twit
-
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from twitter_project.forms import TwitForm
 
 # вывод страницы авторизации
 def login(request):
@@ -10,15 +11,44 @@ def login(request):
 # заносит твит в базу данных
 
 def form_twit(request):
-    # if request.method == "POST":
-    error = False
-    a = request.GET.get('text_message', '')
-    if str(a) != '' and len(a) <= 250:
-        i = Twit.objects.create(text=a)
-        i.save()
+    if request.method == "POST":
+        form = TwitForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
+            form.save()
+            return redirect("/")
+    #error = False
+    #a = request.GET.get('text_message', '')
+    #if str(a) != '' and len(a) <= 250:
+     #   i = Twit.objects.create(user=request.user, text=a)
+     #   i.save()
     else:
-        error = "Error"
-    mess = Twit.objects.all()
-    return render(request, 'index.html', {"mess": mess, "error": error})
+    #    error = "Error"
+        form = TwitForm()
+        mess = Twit.objects.all()
+        paginator = Paginator(mess, 10)
+
+        page = request.GET.get('page')
+        contacts = paginator.get_page(page)
+    return render(request, 'index.html', {"mess": contacts, "form":form})
 
 
+def user(request, pk):
+    if request.method == "GET":
+        mess = Twit.objects.filter(user_id=pk)
+        return render(request, 'user.html', {"mess": mess})
+
+
+def edit_twit(request, pk):
+    mess = get_object_or_404(Twit, pk=pk, user=request.user)
+    if request.method == 'POST':
+        form = TwitForm(data=request.POST, instance=mess)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
+            form.save()
+            return redirect("/user/{}".format(request.user.id))
+    else:
+        form = TwitForm(instance=mess)
+        return render(request, 'edit.html', {'form': form})

@@ -1,8 +1,9 @@
 from django.db import models
 from django.utils import timezone
-
+from django.contrib.auth.models import User
 
 class Twit(models.Model):
+    user = models.ForeignKey(User, verbose_name="Создатель", on_delete=models.CASCADE)
     text = models.CharField(max_length=250)
     created_date = models.DateTimeField(
             default=timezone.now)

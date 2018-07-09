@@ -1791,10 +1791,25 @@ account_id</ColNames>
       <DataType>datetime(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="398" parent="244" name="PRIMARY">
+    <column id="398" parent="244" name="user_id">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="399" parent="244" name="twitter_project_twit_user_id_fdd7ea4b_fk_auth_user_id">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="400" parent="244" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+    <foreign-key id="401" parent="244" name="twitter_project_twit_user_id_fdd7ea4b_fk_auth_user_id">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>twitter_db</RefSchemaName>
+      <RefTableName>auth_user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

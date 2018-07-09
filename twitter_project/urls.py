@@ -3,7 +3,7 @@ from django.urls import path, include
 from twitter_project.views import *
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', form_twit),
-    path('accounts/', include('allauth.urls')),
+    path('user/<int:pk>', user),
+    path('user/edit/<int:pk>', edit_twit, name="edit_twit"),
 ]

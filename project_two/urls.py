@@ -20,6 +20,6 @@ from twitter_project.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', form_twit),
+    path('', include('twitter_project.urls')),
     path('accounts/', include('allauth.urls')),
 ]
