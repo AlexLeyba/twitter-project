@@ -6,4 +6,5 @@ urlpatterns = [
     path('', form_twit),
     path('user/<int:pk>', user),
     path('user/edit/<int:pk>', edit_twit, name="edit_twit"),
+    path('retwit/<int:pk>', retwit, name="re_twit"),
 ]
