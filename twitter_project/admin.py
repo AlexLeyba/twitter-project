@@ -11,5 +11,4 @@ class TwitAdmin(admin.ModelAdmin):
     list_filter = ("user",)
 
 
-
 admin.site.register(Twit, TwitAdmin)

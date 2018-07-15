@@ -1798,67 +1798,82 @@ account_id</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="400" parent="244" name="twitter_project_twit_user_id_fdd7ea4b_fk_auth_user_id">
+    <column id="400" parent="244" name="answers_id">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="401" parent="244" name="twitter_project_twit_user_id_fdd7ea4b_fk_auth_user_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="401" parent="244" name="PRIMARY">
+    <index id="402" parent="244" name="twitter_project_twit_answers_id_ea997978_fk_twitter_p">
+      <ColNames>answers_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="403" parent="244" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="402" parent="244" name="twitter_project_twit_user_id_fdd7ea4b_fk_auth_user_id">
+    <foreign-key id="404" parent="244" name="twitter_project_twit_user_id_fdd7ea4b_fk_auth_user_id">
       <ColNames>user_id</ColNames>
       <RefSchemaName>twitter_db</RefSchemaName>
       <RefTableName>auth_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="403" parent="245" name="id">
+    <foreign-key id="405" parent="244" name="twitter_project_twit_answers_id_ea997978_fk_twitter_p">
+      <ColNames>answers_id</ColNames>
+      <RefSchemaName>twitter_db</RefSchemaName>
+      <RefTableName>twitter_project_twit</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="406" parent="245" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="404" parent="245" name="twit_id">
+    <column id="407" parent="245" name="twit_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="405" parent="245" name="user_id">
+    <column id="408" parent="245" name="user_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="406" parent="245" name="twitter_project_twit_re_twit_twit_id_user_id_a41ab8bd_uniq">
+    <index id="409" parent="245" name="twitter_project_twit_re_twit_twit_id_user_id_a41ab8bd_uniq">
       <ColNames>twit_id
 user_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="407" parent="245" name="twitter_project_twit_re_twit_user_id_c403515e_fk_auth_user_id">
+    <index id="410" parent="245" name="twitter_project_twit_re_twit_user_id_c403515e_fk_auth_user_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="408" parent="245" name="PRIMARY">
+    <key id="411" parent="245" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="409" parent="245" name="twitter_project_twit_re_twit_twit_id_user_id_a41ab8bd_uniq">
+    <key id="412" parent="245" name="twitter_project_twit_re_twit_twit_id_user_id_a41ab8bd_uniq">
       <ColNames>twit_id
 user_id</ColNames>
       <UnderlyingIndexName>twitter_project_twit_re_twit_twit_id_user_id_a41ab8bd_uniq</UnderlyingIndexName>
     </key>
-    <foreign-key id="410" parent="245" name="twitter_project_twit_twit_id_48b4003b_fk_twitter_p">
+    <foreign-key id="413" parent="245" name="twitter_project_twit_twit_id_48b4003b_fk_twitter_p">
       <ColNames>twit_id</ColNames>
       <RefSchemaName>twitter_db</RefSchemaName>
       <RefTableName>twitter_project_twit</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="411" parent="245" name="twitter_project_twit_re_twit_user_id_c403515e_fk_auth_user_id">
+    <foreign-key id="414" parent="245" name="twitter_project_twit_re_twit_user_id_c403515e_fk_auth_user_id">
       <ColNames>user_id</ColNames>
       <RefSchemaName>twitter_db</RefSchemaName>
       <RefTableName>auth_user</RefTableName>

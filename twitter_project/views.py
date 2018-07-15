@@ -1,8 +1,11 @@
+import re
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 from twitter_project.models import Twit
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-from twitter_project.forms import TwitForm
+from twitter_project.forms import TwitForm, EditProfile
+from django.contrib.auth.models import User
 
 
 # вывод страницы авторизации
@@ -61,3 +64,36 @@ def retwit(request, pk):
     mess.re_twit.add(request.user)
     mess.save()
     return redirect("/")
+
+
+def edit_profile(request):
+    user = get_object_or_404(User, id=request.user.id)
+    if request.method == 'POST':
+        form = EditProfile(data=request.POST, instance=user)
+        if form.is_valid():
+            first_name = form.cleaned_data["first_name"]
+            match = re.match("^[a-z, A-Z]+\w+$", first_name)
+            if match is not None:
+                form.save()
+            return redirect('/user/profile/'.format(request.user.id))
+    else:
+        form = EditProfile(instance=user)
+        return render(request, 'profile.html', {'form': form})
+
+
+def twit_single(request, pk):
+    mess = get_object_or_404(Twit, pk=pk)
+    if request.method == "POST":
+        form = TwitForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
+            form.answers = mess
+            form.save()
+            return redirect("/message/{}".format(pk))
+    else:
+        answers = Twit.objects.filter(answers=mess)
+        form = TwitForm()
+    return render(request, "twit-single.html", {"mess": mess,
+                                                "form": form,
+                                                "answers": answers})

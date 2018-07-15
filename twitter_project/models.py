@@ -14,6 +14,7 @@ class Twit(models.Model):
         default=timezone.now)
     published_date = models.DateTimeField(
         blank=True, null=True)
+    answers = models.ForeignKey('self', verbose_name='Ответы', on_delete=models.CASCADE, null=True, blank=True)
 
     def publish(self):
         self.published_date = timezone.now()
