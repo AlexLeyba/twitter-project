@@ -93,11 +93,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="twit.conf" pinned="false" current-in-tab="true">
+      <file leaf-file-name="twit.conf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/twit.conf">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
               <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -155,7 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/my.cnf" />
         <option value="$PROJECT_DIR$/venv/lib/python3.5/site-packages/allauth/templates/base.html" />
         <option value="$PROJECT_DIR$/twitter_project/templates/account/base.html" />
@@ -185,6 +193,7 @@
         <option value="$PROJECT_DIR$/project_two/settings.py" />
         <option value="$PROJECT_DIR$/gunicorn.conf.py" />
         <option value="$PROJECT_DIR$/conf/twit.conf" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -214,16 +223,6 @@
           <expand>
             <path>
               <item name="project_two" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project_two" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project_two" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project_two" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project_two" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project_two" type="462c0819:PsiDirectoryNode" />
               <item name="project_two" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -353,7 +352,21 @@
       <option name="project" value="LOCAL" />
       <updated>1531860811919</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="final2">
+      <created>1531861173924</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1531861173924</updated>
+    </task>
+    <task id="LOCAL-00006" summary="final3">
+      <created>1531861292408</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1531861292408</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -400,11 +413,12 @@
     <MESSAGE value="Задание#3 light#1" />
     <MESSAGE value="Задание#4 light#1 and light#2" />
     <MESSAGE value="final" />
-    <option name="LAST_COMMIT_MESSAGE" value="final" />
+    <MESSAGE value="final2" />
+    <MESSAGE value="final3" />
+    <option name="LAST_COMMIT_MESSAGE" value="final3" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/twitter_project/templates/account/password_change.html" />
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/my.cnf" />
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/allauth/templates/socialaccount/base.html" />
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/allauth/templates/socialaccount/authentication_error.html" />
@@ -664,6 +678,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
         </state>
       </provider>
     </entry>
