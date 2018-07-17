@@ -78,16 +78,7 @@ WSGI_APPLICATION = 'project_two.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'twitter_db',
-        'USER': 'dbuser',
-        'PASSWORD': '123',
-        # 'HOST': 'localhost',
-        # 'PORT': '',
-    }
-}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -148,3 +139,9 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = "localhost"
 EMAIL_HOST_USER = "localhost"
 EMAIL_PORT = 587
+
+
+try:
+    from .local_settings import *
+except:
+    from .prod_settings import *

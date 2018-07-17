@@ -1,10 +1,11 @@
-    {% extends 'base.html' %}
-    {% load bootstrap4 %}
-    {% block content %}
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
     <!-- Begin page content -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-      <h1 class="mt-5">Twitter-project</h1>
-        {% if user.is_active %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <h1 class="mt-5">Twitter-project</h1>
+    {% if user.is_active %}
         <form action="" method="POST" role="form">
             {% if error %} {{ error }} {% endif %}
             {% csrf_token %}
@@ -13,13 +14,16 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add new message</button>
         </form>
     {% endif %}
-        <div class="row">
+    <div class="row">
         {% for i in mess %}
-           <div class="col-md-12">
-           <h6>{% if i.user.first_name %}{{ i.user.first_name }} {% else %} anon {% endif %}</h6>
-                <p class="text-justify"><a href="{% url 'twit_single' pk=i.id %}">{{ i.text }}</a><br>
-               <sub>{{ i.created_date }}</sub> <a href="{% url 're_twit' pk=i.id %}"><i class="fas fa-retweet"></i></a></p>
-           </div>
+            <div class="col-md-12">
+                <div class="twit">
+                    <h6>{% if i.user.first_name %}{{ i.user.first_name }} {% else %} anon {% endif %}</h6>
+                    <p class="text-justify"><a href="{% url 'twit_single' pk=i.id %}">{{ i.text }}</a><br>
+                        <sub>{{ i.created_date }}</sub> <a href="{% url 're_twit' pk=i.id %}"><i
+                                class="fas fa-retweet"></i></a></p>
+                </div>
+            </div>
         {% endfor %}
         <div class="pagination">
     <span class="step-links">
@@ -38,8 +42,18 @@
 {#            <a href="?page={{ mess.paginator.num_pages }}">last &raquo;</a>#}
 {#        {% endif %}#}
     </span>
-</div>
         </div>
-      <p class="lead"></p>
+    </div>
+    <p class="lead"></p>
+    <script type="javascript">
+      var maxLen = 20;
+      $('#id_text').keyup(function () {
+          var $this = $(this);
+          if ($this.val().length > maxLen)
+              $this.val($this.val().substr(0, maxLen));
+      });
+      });
+      }
+    </script>
 
-    {% endblock %}
+{% endblock %}
