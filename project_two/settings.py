@@ -135,11 +135,17 @@ LOGIN_URL = '/accounts/login/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = "localhost"
-EMAIL_HOST_USER = "localhost"
-EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
+#EMAIL_HOST = "smtp.yandex.ru"
+#EMAIL_HOST_USER = "deathnotka@yandex.ru"
+#EMAIL_HOST_PASSWORD = ""
+#EMAIL_PORT = 465
+# EMAIL_PORT = 587
 
+#ACCOUNT_ACTIVATION_DAYS = 7
+#REGISTRATION_AUTO_LOGIN = False
+#LOGIN_REDIRECT_URL = '/'
+# ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
 try:
     from .local_settings import *
