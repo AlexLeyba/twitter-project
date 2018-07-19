@@ -9,7 +9,7 @@ class Twit(models.Model):
         User,
         verbose_name="Ретвит",
         related_name="retwit")
-    text = models.CharField(max_length=250)
+    text = models.CharField(max_length=251)
     created_date = models.DateTimeField(
         default=timezone.now)
     published_date = models.DateTimeField(
