@@ -1,2 +1,7 @@
-venv
-.idea
+$ cat .gitignore
+*.idea/
+*venv/
+*__pycache/
+*db.sqlite3
+*.gitignore
+*my.cnf

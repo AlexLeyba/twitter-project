@@ -16,6 +16,3 @@ class EditProfile(ModelForm):
         fields = ('first_name',)
 
 
-#class AnswerTwitForm(ModelForm):
-   # class Meta:
-  #      model =
